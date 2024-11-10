@@ -10,12 +10,12 @@ class NavbarTranslationOptions(TranslationOptions):
 
 @register(models.Posts)
 class PostTranslationOptions(TranslationOptions):
-    fields = ('title', "post", "author_post")
+    fields = ('title','subtitle', "post", "author_post")
 
 
 @register(models.News)
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', "post", "author_post")
+    fields = ('title','subtitle', "post", "author_post")
 
 
 @register(models.InteractiveMap)
