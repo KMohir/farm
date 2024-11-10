@@ -39,7 +39,7 @@ class AbstractTemplate(BaseModel):
     """ abstract template for news posts and ads """
     image = models.ImageField(verbose_name=_("Asosiy rasm"), upload_to="image/%Y-%m-%d/", blank=True, null=True)
     title = models.CharField(verbose_name=_("Sarlavha"), max_length=500, null=True)
-    subtitle = models.CharField(verbose_name=_("Sarlavha"), max_length=500, null=True)
+    subtitle = models.CharField(verbose_name=_("Short title"), max_length=500, null=True)
     post = QuillField(verbose_name=_("To'liq mazmuni"), null=True, blank=True)
     status = models.CharField(verbose_name=_("status"), max_length=50, choices=Status.choices, default=Status.pending)
     slug = models.SlugField(max_length=50, verbose_name="slug", unique=True,
