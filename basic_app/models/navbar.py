@@ -11,9 +11,9 @@ class NavbarStatus(models.TextChoices):
 
 class Navbar(MPTTModel):
     """ Navigation bar model """
-    author = models.ForeignKey(
+    created_by = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True,
-        verbose_name=_("object_make_user"), related_name="navbar_author"
+        verbose_name=_("object_make_user"), related_name="navbar_created_by"
     )
     name = models.CharField(verbose_name=_("Nomi"), max_length=100)
     parent = TreeForeignKey("self", related_name="children", on_delete=models.SET_NULL, null=True, blank=True)
@@ -25,7 +25,7 @@ class Navbar(MPTTModel):
     slug = models.SlugField(max_length=120, unique=True)
     added_at = models.DateTimeField(auto_now_add=True)
     url = models.URLField(max_length=255, null=True, blank=True, help_text="Tegish shart emas")
-    update_user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True,
+    updated_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True,
                                     related_name="update_navbar_user")
     updated_at = models.DateTimeField(auto_now=True)
 

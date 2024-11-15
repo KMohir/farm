@@ -9,7 +9,7 @@ class PostsListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Posts
-        fields = ("id", "title", "navbar", "added_at", "image", "slug", "post_viewed_count", "author_post")
+        fields = ("id", "title","subtitle", "subtitle","navbar", "added_at", "image", "slug", "post_viewed_count", "author_post")
 
 
 class PostsDetailSerializer(serializers.ModelSerializer):

@@ -6,7 +6,7 @@ import basic_app.models as models
 class NewsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.News
-        fields = ("id", "title", "added_at", "image", "slug", "post_viewed_count", "author_post")
+        fields = ("id", "title", "subtitle","added_at", "image", "slug", "post_viewed_count", "author_post")
 
 
 class NewsDetailSerializer(serializers.ModelSerializer):
