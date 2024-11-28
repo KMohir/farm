@@ -44,10 +44,13 @@ class AdministratorAdmin(BaseAdmin):
 
 class InteractiveMapAdmin(BaseAdmin):
     pass
-
+class YoutubeAdmin(BaseAdmin):
+    pass
 
 admin.site.register(News, NewsAdmin)
 admin.site.register(Posts, PostsAdmin)
 admin.site.register(Navbar, NavbarAdmin)
 admin.site.register(Administrator, AdministratorAdmin)
 admin.site.register(InteractiveMap, InteractiveMapAdmin)
+admin.site.register(Youtube, YoutubeAdmin)
+
