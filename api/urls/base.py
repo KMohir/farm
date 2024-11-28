@@ -6,4 +6,5 @@ urlpatterns = [
     path("navbar/", include("api.urls.navbar")),
     path("interactive-map/", include("api.urls.interactive_map")),
     path("youtube/", include("api.urls.youtube")),
+    path("elon/", include("api.urls.elon")),
 ]

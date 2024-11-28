@@ -28,6 +28,8 @@ class BaseAdmin(admin.ModelAdmin):
 
 class NewsAdmin(BaseAdmin):
     pass
+class ElonAdmin(BaseAdmin):
+    pass
 
 
 class PostsAdmin(BaseAdmin):
@@ -48,6 +50,7 @@ class YoutubeAdmin(BaseAdmin):
     pass
 
 admin.site.register(News, NewsAdmin)
+admin.site.register(Elon, ElonAdmin)
 admin.site.register(Posts, PostsAdmin)
 admin.site.register(Navbar, NavbarAdmin)
 admin.site.register(Administrator, AdministratorAdmin)

@@ -17,6 +17,10 @@ class PostTranslationOptions(TranslationOptions):
 class NewsTranslationOptions(TranslationOptions):
     fields = ('title','subtitle', "post", "author_post")
 
+@register(models.Elon)
+class NewsTranslationOptions(TranslationOptions):
+    fields = ('title','subtitle', "post", "author_post")
+
 
 @register(models.InteractiveMap)
 class InteractiveMapTranslationOptions(TranslationOptions):
