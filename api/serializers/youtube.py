@@ -5,7 +5,7 @@ from basic_app.models.youtube import Youtube
 class YoutubeListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Youtube
-        fields = ('added_at', 'updated_at', 'created_by', 'updated_by', 'url')
+        fields = ('url', 'created_at', 'updated_at', 'created_by', 'updated_by')
 
 class NewsDetailSerializer(serializers.ModelSerializer):
     class Meta:

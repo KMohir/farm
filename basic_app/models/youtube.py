@@ -5,7 +5,8 @@ from django.utils.translation import gettext_lazy as _
 class Youtube(BaseModel):
     """YouTube news model"""
     url = models.URLField(max_length=255, null=True, blank=True)
-
+    created_at = models.DateTimeField(auto_now_add=True)  # Время создания
+    updated_at = models.DateTimeField(auto_now=True)
     class Meta:
         db_table = "youtube"
         managed = True

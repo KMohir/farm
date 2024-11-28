@@ -46,7 +46,8 @@ class AbstractTemplate(BaseModel):
                             help_text=_("Majburyat tug'ulmasa tegmang"))
     post_viewed_count = models.IntegerField(default=0, verbose_name=_("Ko'rilganlik soni"), help_text=_("Tegilmasin !"))
     author_post = models.CharField(verbose_name=_("Muallifi"), max_length=300)
-
+    created_at = models.DateTimeField(auto_now_add=True)  # Время создания
+    updated_at = models.DateTimeField(auto_now=True)
     def save(self, *args, **kwargs):
         if self._state.adding:
             im = Image.open(self.image)
