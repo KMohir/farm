@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-j^8bs6pm7podtn4xfnu3e*)#zo^)cjtt$kfih=1*$yx8auwagd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['triliant.uz', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'имя_вашей_базы_данных',
-#         'USER': 'ваш_пользователь',
-#         'PASSWORD': 'ваш_пароль',
-#         'HOST': 'localhost',  # если сервер PostgreSQL находится на той же машине, где и Django
-#         'PORT': '5432',       # стандартный порт PostgreSQL
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'farm_db',
+        'USER': 'postgres',
+        'PASSWORD': '111',
+        'HOST': 'localhost',  # если сервер PostgreSQL находится на той же машине, где и Django
+        'PORT': '5432',       # стандартный порт PostgreSQL
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
