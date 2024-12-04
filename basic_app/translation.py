@@ -31,4 +31,4 @@ class InteractiveMapTranslationOptions(TranslationOptions):
 
 @register(models.Administrator)
 class AdministratorTranslationOptions(TranslationOptions):
-    fields = ("f_name", "position", "admission_days")
+    fields = ("title","name", "position")

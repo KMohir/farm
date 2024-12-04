@@ -3,12 +3,13 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Administrator(BaseModel):
-    image = models.ImageField(upload_to='administrators/')
-    f_name = models.CharField(max_length=100, verbose_name=_("To'liq ismi"))
+    title = models.CharField(max_length=255, verbose_name=_("Lavozimi"))
+    name = models.CharField(max_length=255, verbose_name=_("To'liq ismi"))
+    position = models.CharField(max_length=255, verbose_name=_("Lavozimi"))
     phone = models.CharField(max_length=100, verbose_name=_("Telefon raqami"))
-    position = models.CharField(max_length=100, verbose_name=_("Lavozimi"))
-    email = models.EmailField(verbose_name=_("Email"), max_length=254, unique=True)
-    admission_days = models.CharField(max_length=200, verbose_name=_("Qabul kunlari"))
+    image = models.ImageField(upload_to='administrators/')
+
+
 
     class Meta:
         db_table = 'administrators'
