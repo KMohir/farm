@@ -8,5 +8,6 @@ urlpatterns = [
     path("youtube/", include("api.urls.youtube")),
     path("elon/", include("api.urls.elon")),
     path("workers/", include("api.urls.workers")),
+    path("banner/", include("api.urls.banner")),
 
 ]

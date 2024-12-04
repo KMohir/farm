@@ -12,7 +12,9 @@ class NavbarTranslationOptions(TranslationOptions):
 class PostTranslationOptions(TranslationOptions):
     fields = ('title','subtitle', "post", "author_post")
 
-
+@register(models.Banner)
+class PostTranslationOptions(TranslationOptions):
+    fields = ('title','subtitle', "post", "author_post")
 @register(models.News)
 class NewsTranslationOptions(TranslationOptions):
     fields = ('title','subtitle', "post", "author_post")

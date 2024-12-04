@@ -6,3 +6,4 @@ from basic_app.models.workers import *
 from basic_app.models.interactive_map import *
 from basic_app.models.youtube import *
 from basic_app.models.elon import *
+from basic_app.models.banner import *
