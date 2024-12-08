@@ -4,7 +4,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 import basic_app.models as models
 from api import InteractiveMapSerializer
-from api.serializers.navbar import *
+from api.serializers.interactive_map import *
 
 
 class InteractiveMapListViewSet(ListAPIView, GenericViewSet):

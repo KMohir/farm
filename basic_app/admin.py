@@ -52,6 +52,15 @@ class YoutubeAdmin(BaseAdmin):
 class BannerAdmin(BaseAdmin):
     pass
 
+class TuzilmaAdmin(BaseAdmin):
+    pass
+
+class MaqsadAdmin(BaseAdmin):
+    pass
+
+class bolimAdmin(BaseAdmin):
+    pass
+
 admin.site.register(News, NewsAdmin)
 admin.site.register(Elon, ElonAdmin)
 admin.site.register(Posts, PostsAdmin)
@@ -60,4 +69,7 @@ admin.site.register(Administrator, AdministratorAdmin)
 admin.site.register(InteractiveMap, InteractiveMapAdmin)
 admin.site.register(Youtube, YoutubeAdmin)
 admin.site.register(Banner, BannerAdmin)
+admin.site.register(tuzilma, TuzilmaAdmin)
+admin.site.register(maqsad, MaqsadAdmin)
+admin.site.register(bolimlar, bolimAdmin)
 

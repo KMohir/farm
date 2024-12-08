@@ -32,3 +32,16 @@ class InteractiveMapTranslationOptions(TranslationOptions):
 @register(models.Administrator)
 class AdministratorTranslationOptions(TranslationOptions):
     fields = ("title","name", "position")
+
+@register(models.tuzilma)
+class tuzilmaTranslationOptions(TranslationOptions):
+    fields = ("title","name", "position")
+
+@register(models.maqsad)
+class maqsadTranslationOptions(TranslationOptions):
+    fields = ("title","name", "position")
+
+@register(models.bolimlar)
+class maqsadTranslationOptions(TranslationOptions):
+    fields = ("title","name", "position")
+

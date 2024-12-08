@@ -3,7 +3,7 @@ from rest_framework.viewsets import GenericViewSet
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 import basic_app.models as models
-from api.serializers.news import *
+from api.serializers.elon import *
 
 
 class NewsListAPIView(ListAPIView, GenericViewSet):

@@ -7,3 +7,6 @@ from basic_app.models.interactive_map import *
 from basic_app.models.youtube import *
 from basic_app.models.elon import *
 from basic_app.models.banner import *
+from basic_app.models.tuzilma import *
+from basic_app.models.maqsad import *
+from basic_app.models.bolimlar import *

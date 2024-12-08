@@ -9,5 +9,8 @@ urlpatterns = [
     path("elon/", include("api.urls.elon")),
     path("workers/", include("api.urls.workers")),
     path("banner/", include("api.urls.banner")),
+    path("tuzilma/", include("api.urls.tuzilma")),
+    path("maqsad/", include("api.urls.maqsad")),
+    path("bolimlar/", include("api.urls.bolimlar")),
 
 ]
