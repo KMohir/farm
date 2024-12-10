@@ -8,5 +8,5 @@ from api.serializers.tuzilma import *
 
 class NewsListAPIView(ListAPIView, GenericViewSet):
     """Barcha yangiliklar"""
-    queryset = models.Administrator.objects.order_by("-id")
+    queryset = models.tuzilma.objects.order_by("-id")
     serializer_class = AdministratorListSerializer

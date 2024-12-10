@@ -14,12 +14,13 @@ SECRET_KEY = 'django-insecure-j^8bs6pm7podtn4xfnu3e*)#zo^)cjtt$kfih=1*$yx8auwagd
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+
+# CORS configuration
+CORS_ALLOW_ALL_ORIGINS = True  # Разрешить запросы с любого источника (не рекомендуется для продакшена)
+CORS_ALLOW_CREDENTIALS = True  # Разрешить передачу cookies и Authorization-заголовков
 CORS_ORIGIN_ALLOW_ALL = True
-
+CSRF_TRUSTED_ORIGINS = ['http://37.27.188.235:5000']
 # Application definition
-
 INSTALLED_APPS = [
     "modeltranslation",
     'django.contrib.admin',
@@ -32,27 +33,30 @@ INSTALLED_APPS = [
     'basic_app',
     'rest_framework',
     'django_filters',
-    'corsheaders', "drf_yasg",
+    'corsheaders',  # Добавлено CORS middleware
+    "drf_yasg",
     'django_quill',
 ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",  # for static files
+    "corsheaders.middleware.CorsMiddleware",  # CORS middleware
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # For static files
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "django.middleware.locale.LocaleMiddleware",  # for multi lang
+    "django.middleware.locale.LocaleMiddleware",  # For multi-lang
     "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',  # Добавлено здесь
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'conf.urls'
 
@@ -75,7 +79,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'conf.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 DATABASES = {
     'default': {
@@ -88,16 +97,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -114,8 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'Asia/Tashkent'
@@ -128,22 +126,17 @@ from django.utils.translation import gettext_lazy as _
 
 LANGUAGES = [
     ('uz', _("Uzbek")),
-    ('ru', _("Russion")),
+    ('ru', _("Russian")),
     ('en', _("English")),
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = LANGUAGE_CODE
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
